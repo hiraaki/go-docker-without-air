@@ -6,7 +6,7 @@ import (
 
 func main() {
 
-	StartServer()
+	//server.StartServer()
 
 	fmt.Println("Incializando docker")
 
