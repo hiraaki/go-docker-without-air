@@ -1,0 +1,33 @@
+root = "."
+tmp_dir = "temp"
+
+[build]
+  cmd = "go build -o ./temp/main ./cmd/main.go"
+  full_bin = "dlv --continue --headless --listen=:8081  --log exec ./temp/main"
+  delay = 2000
+  exclude_dir = ["assets", "temp"]
+  exclude_file = []
+  exclude_regex = []
+  exclude_unchanged = false
+  follow_symlink = false
+  include_dir = []
+  include_ext = ["go", "tpl", "tmpl", "html"]
+  kill_delay = "0s"
+  log = "build-errors.log"
+  send_interrupt = false
+  stop_on_error = true
+
+[log]
+# Show log time
+time = true
+
+[color]
+# Customize each part's color. If no color found, use the raw app log.
+main = "magenta"
+watcher = "cyan"
+build = "yellow"
+runner = "green"
+
+[misc]
+# Delete tmp directory on exit
+clean_on_exit = true

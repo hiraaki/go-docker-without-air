@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: _go.dockerfile
+      target: builder
+    image: go-image
+    container_name: ecoflow-ext
+    environment:
+        TZ: "${TZ}"
+    volumes:
+      - .:/go/src/app
+    ports:
+      - 8080:8000
